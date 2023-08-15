@@ -1,0 +1,4 @@
+1. create a restful flask api deployed on render
+    -Should be able to:
+
+        a. hash passwords sent from frontend, then send data to backend and frontend.
