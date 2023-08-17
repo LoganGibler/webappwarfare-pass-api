@@ -9,12 +9,12 @@ import re
 
 from hashlib import md5, sha1, sha224, sha256, sha384, sha512
 
-server = Flask(__name__)
-cors = CORS(server)
-server.config['CORS_HEADERS'] = 'Content-Type'
+app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
-@server.route("/hash_pass", methods=['GET', 'POST'])
+@app.route("/hash_pass", methods=['GET', 'POST'])
 @cross_origin()
 def hash_pass():
     data = request.get_json(force=True)
@@ -28,4 +28,4 @@ def hash_pass():
 
 
 if __name__ == "__main__":
-    server.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
