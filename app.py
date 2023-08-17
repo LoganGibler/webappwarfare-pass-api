@@ -20,7 +20,8 @@ def hash_pass():
     data = request.get_json(force=True)
     print("This is main request to sent to flask api:", data)
     password = data['password']
-    print("This is password: " + password)
+    password = password + "z1x2c3v4%"
+    # print("This is password: " + password)
 
     hashed_password = md5(password.encode())
 
